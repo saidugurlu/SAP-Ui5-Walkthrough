@@ -5,7 +5,7 @@
 >
     <!-- <Text text="Hello World again!"/> -->
     <Button
-        text="Say Hello"
+        text="{i18n>showHelloButtonText}"
         press=".onShowHello"
     />
     <Input
