@@ -17,10 +17,11 @@
       "keywords": ["{{<keyword1>}}", "{{<keyword2>}}"]
     },
     "dataSources": {
-      "<dataSourceAlias>": {
-        "uri": "<uri>",
+      "invoiceRemote": {
+        "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+        "type": "OData",
         "settings": {
-          "localUri": "<localUri>"
+          "odataVersion": "2.0"
         }
       }
     }
@@ -67,15 +68,14 @@
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
           "bundleName": "sap.ui.demo.walkthrough.i18n.i18n",
-          "suppoertedLocales": [""],
+          "supportedLocales": [""],
           "fallbackLocale": ""
         },
         "uri": "<uriRelativeToManifest>"
       },
-	  "invoice": {
-		"type": "sap.ui.model.json.JSONModel",
-		"uri": "Invoices.json"
-	  },
+      "invoice": {
+        "dataSource": "invoiceRemote"
+      },
       "": {
         "dataSource": "<dataSourceAlias>",
         "settings": {}
@@ -100,6 +100,7 @@
       "cozy": false
     }
   },
+
   "sap.platform.abap": {
     "_version": "1.1.0",
     "uri": "<uri>"
