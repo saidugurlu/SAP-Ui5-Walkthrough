@@ -15,7 +15,6 @@ sap.ui.define([
                 
 			});
         },
-
 		onNavBack: function () {
 			let  oHistory = History.getInstance();
 			let  sPreviousHash = oHistory.getPreviousHash();
