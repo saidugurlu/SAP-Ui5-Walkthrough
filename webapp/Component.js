@@ -1,8 +1,10 @@
-sap.ui.define([
+sap.ui.define(
+  [
     "sap/ui/core/UIComponent",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel"
-  ], function (UIComponent, JSONModel, ResourceModel) {
+    "sap/ui/model/resource/ResourceModel",
+  ],
+  function (UIComponent, JSONModel, ResourceModel) {
     "use strict";
     return UIComponent.extend("sap.ui.demo.walkthrough.Component", {
       metadata: {
@@ -19,6 +21,9 @@ sap.ui.define([
         };
         var oModel = new JSONModel(oData);
         this.setModel(oModel);
+
+        // create the views based on the url/hash
+        this.getRouter().initialize();
       },
     });
   }
